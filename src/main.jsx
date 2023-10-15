@@ -14,6 +14,8 @@ import Root from './componets/Root.jsx';
 import Errors from './componets/Errors.jsx';
 import Singup from './componets/Singup.jsx';
 import Authprovider from './componets/Authprovider.jsx';
+import User from './componets/User.jsx';
+import Login from './componets/Login.jsx';
 
 
 
@@ -46,6 +48,15 @@ const router=createBrowserRouter([
     {
       path:'/singup',
       element:<Singup></Singup>
+    },
+    {
+      path:'/user',
+      loader:()=>fetch('http://localhost:5000/user'),
+      element:<User></User>
+    },
+    {
+      path:'/login',
+      element:<Login></Login>
     }
     
 

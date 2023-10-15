@@ -16,8 +16,9 @@ const {createUser}=useContext(AuthContext)
     createUser(email,password)
     .then(result=>{
         console.log(result.user)
-
-        const user={email};
+    const logingTime=result.user?.metadata?.creationTime
+   
+        const user={email,logingTime};
 
 
      fetch('http://localhost:5000/user' ,{
